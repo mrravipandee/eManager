@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "259430761953",
+    "project_id": "emanager-e5b5d",
+    "storage_bucket": "emanager-e5b5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259430761953:android:c37ba71c0ca0ba08997ea0",
+        "android_client_info": {
+          "package_name": "com.mrravipande.emanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259430761953-upmc7n5hk4v93ei95f0dm1nm3vs00lts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBICmHk-Q-t8_-l8YsVTrhGuAAx4erD8Ig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259430761953-upmc7n5hk4v93ei95f0dm1nm3vs00lts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

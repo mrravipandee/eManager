@@ -58,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = loginEmail.getText().toString();
+                String id = loginEmail.getText().toString()+"@gmail.com";
+
+                String email = id;
                 String pass = loginPassword.getText().toString();
 
-                if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                if (!email.isEmpty()) {
                     if (!pass.isEmpty()) {
                         auth.signInWithEmailAndPassword(email, pass)
                                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {

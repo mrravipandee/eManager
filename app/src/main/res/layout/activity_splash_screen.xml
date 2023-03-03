@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
+    android:background="@color/purple_200"
     tools:context=".splashScreen">
 
     <ImageView
@@ -27,15 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="@dimen/_60sdp"
-        android:layout_marginEnd="@dimen/_60sdp"
-        android:layout_marginTop="@dimen/_340sdp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="@dimen/_360sdp"
+        android:layout_marginEnd="69dp"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
-        android:textStyle="bold"
-        android:textSize="@dimen/_28sdp" />
-
+        android:textSize="@dimen/_28sdp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

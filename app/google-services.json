@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "259430761953",
-    "project_id": "emanager-e5b5d",
-    "storage_bucket": "emanager-e5b5d.appspot.com"
+    "project_number": "36315833896",
+    "project_id": "emanager-38ded",
+    "storage_bucket": "emanager-38ded.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:259430761953:android:c37ba71c0ca0ba08997ea0",
+        "mobilesdk_app_id": "1:36315833896:android:1dc579b87c88027be5f71d",
         "android_client_info": {
           "package_name": "com.mrravipande.emanager"
         }
       },
       "oauth_client": [
         {
-          "client_id": "259430761953-upmc7n5hk4v93ei95f0dm1nm3vs00lts.apps.googleusercontent.com",
+          "client_id": "36315833896-c07rg0srdqme4t6egkg04jm39hcraoer.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrravipande.emanager",
+            "certificate_hash": "a31be69a9055e3a6a923364a713fcfa2cfb78275"
+          }
+        },
+        {
+          "client_id": "36315833896-f0lkudenquu4c45a4pg4g7svq7dff2lr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBICmHk-Q-t8_-l8YsVTrhGuAAx4erD8Ig"
+          "current_key": "AIzaSyBvH20jZu-wfkYg9SpuEYdlpRjcGf5JQeo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "259430761953-upmc7n5hk4v93ei95f0dm1nm3vs00lts.apps.googleusercontent.com",
+              "client_id": "36315833896-f0lkudenquu4c45a4pg4g7svq7dff2lr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

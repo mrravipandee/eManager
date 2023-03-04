@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -39,6 +40,17 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new homeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
+
+        navigationView.getMenu().findItem(R.id.nav_profile).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
+                drawerLayout.close();
+
+                Intent intent = new Intent(Home.this, profileEdit.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -47,6 +59,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new homeFragment()).commit();
                 break;
+
+//            case R.id.nav_profile:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new profileFragment()).commit();
+//                break;
 
             case R.id.nav_photos:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new photosFragment()).commit();

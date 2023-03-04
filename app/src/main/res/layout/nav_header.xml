@@ -10,23 +10,27 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ravicircle"/>
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ravicircle"
+        android:background="@drawable/circle_profile"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ravi Pandey"
+        android:text=""
+        android:id="@+id/titleName"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="imravipanday@gmail.com"
+        android:id="@+id/studentId"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="16dp"/>
+
 
 </LinearLayout>

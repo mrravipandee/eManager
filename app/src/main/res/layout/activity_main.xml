@@ -39,13 +39,14 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/login_email"
+                android:id="@+id/login_id"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
                 android:hint="College ID"
+                android:drawableLeft="@drawable/baseline_person_pin_24"
                 android:padding="8dp"
                 android:textColor="@color/purple_200" />
 
@@ -57,6 +58,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
                 android:hint="Passcode"
+                android:drawableLeft="@drawable/baseline_lock_24"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/purple_200" />
@@ -72,13 +74,13 @@
                 app:cornerRadius="20dp" />
 
             <TextView
-                android:id="@+id/forgot_password"
+                android:id="@+id/signupRedirectText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:padding="8dp"
-                android:text="Forgot Password?"
+                android:text="Don't have account ?"
                 android:textColor="@color/purple_200"
                 android:textSize="16sp" />
 

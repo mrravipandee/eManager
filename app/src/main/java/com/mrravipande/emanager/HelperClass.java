@@ -2,7 +2,9 @@ package com.mrravipande.emanager;
 
 public class HelperClass {
 
-    String name, email, username, password;
+    String name;
+    String email;
+    String username;
 
     public String getName() {
         return name;
@@ -42,6 +44,8 @@ public class HelperClass {
         this.username = username;
         this.password = password;
     }
+
+    String password;
 
     public HelperClass() {
     }

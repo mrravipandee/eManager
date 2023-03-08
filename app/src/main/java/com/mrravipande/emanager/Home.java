@@ -7,22 +7,37 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public DrawerLayout drawerLayout;
 
+    String userName, userId, email, password;
+    DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-//        getSupportActionBar().hide();
+
+        reference = FirebaseDatabase.getInstance().getReference("users");
 
         Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
         setSupportActionBar(toolbar);
@@ -30,6 +45,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        showProfileData();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
                 R.string.close_nav);
@@ -46,11 +63,61 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
                 drawerLayout.close();
 
+                moveProfileData();
+
                 Intent intent = new Intent(Home.this, profileEdit.class);
                 startActivity(intent);
                 return false;
             }
         });
+    }
+
+    public void moveProfileData() {
+
+        String userUsername = userId.toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                    String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+
+                    Intent intent = new Intent(Home.this, profileEdit.class);
+
+                    intent.putExtra("name", nameFromDB);
+                    intent.putExtra("email", emailFromDB);
+                    intent.putExtra("username", usernameFromDB);
+                    intent.putExtra("password", passwordFromDB);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void showProfileData() {
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        // Start: show data from Database to home navigation drawer profile
+        View headerView = navigationView.getHeaderView(0);
+
+        Intent intent = getIntent();
+
+        TextView navUsername = headerView.findViewById(R.id.titleName);
+        userName = intent.getStringExtra("name");
+        navUsername.setText(userName);
+
+        TextView navStudentId = headerView.findViewById(R.id.studentId);
+        userId = intent.getStringExtra("username");
+        navStudentId.setText(userId);
+        // end: show data from Database to home navigation drawer profile
     }
 
     @Override

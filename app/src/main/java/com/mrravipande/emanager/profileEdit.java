@@ -23,6 +23,7 @@ public class profileEdit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         reference = FirebaseDatabase.getInstance().getReference("users");
 

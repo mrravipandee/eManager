@@ -49,7 +49,7 @@ public class signUp extends AppCompatActivity {
                 reference.child(username).setValue(helperClass);
 
                 Toast.makeText(signUp.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(signUp.this, MainActivity.class);
+                Intent intent = new Intent(signUp.this, Home.class);
                 startActivity(intent);
             }
         });

@@ -12,13 +12,15 @@
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:src="@drawable/ravicircle"
         android:background="@drawable/circle_profile"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="Ravi"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:id="@+id/titleName"
         android:textColor="@color/white"
         android:textStyle="bold"/>
@@ -27,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/studentId"
-        android:text=""
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:text="1234567"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="16dp"/>

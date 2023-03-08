@@ -17,68 +17,33 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class navHeader extends AppCompatActivity {
-
-    TextView profileName, profileEmail, profileUsername, profilePassword;
     TextView titleName, titleUsername;
-    Button editProfile;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_header);
 
-        profileName = findViewById(R.id.titleName);
-        profileUsername = findViewById(R.id.studentId);
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
+
+
+
+        titleName = findViewById(R.id.titleName);
+        titleUsername = findViewById(R.id.studentId);
 
         showAllUserData();
-
-//        editProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                passUserData();
-//            }
-//        });
 
     }
 
     public void showAllUserData(){
-        Intent intent = getIntent();
-        String nameUser = intent.getStringExtra("name");
-        String usernameUser = intent.getStringExtra("username");
 
-        profileName.setText(nameUser);
-        profileUsername.setText(usernameUser);
+        Intent intent1 = getIntent();
+        String nameUser = intent1.getStringExtra("name");
+        String usernameUser = intent1.getStringExtra("username");
+
+        titleName.setText(nameUser);
+        titleUsername.setText(usernameUser);
     }
 
-//    public void passUserData(){
-//        String userUsername = profileUsername.getText().toString().trim();
-//
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-//        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
-//
-//        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                if (snapshot.exists()){
-//
-//                    String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
-//                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
-//
-//                    Intent intent = new Intent(navHeader.this, profileEdit.class);
-//
-//                    intent.putExtra("name", nameFromDB);
-//                    intent.putExtra("username", usernameFromDB);
-//
-//                    startActivity(intent);
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
 }

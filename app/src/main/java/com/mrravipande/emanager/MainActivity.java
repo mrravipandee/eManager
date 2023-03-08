@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("password", passwordFromDB);
 
                         startActivity(intent);
+                        finish();
                     } else {
                         loginPassword.setError("Invalid Credentials");
                         loginPassword.requestFocus();

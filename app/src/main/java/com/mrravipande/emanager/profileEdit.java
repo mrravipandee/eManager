@@ -1,5 +1,6 @@
 package com.mrravipande.emanager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class profileEdit extends AppCompatActivity {
 
@@ -23,7 +28,7 @@ public class profileEdit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         reference = FirebaseDatabase.getInstance().getReference("users");
 
@@ -40,11 +45,43 @@ public class profileEdit extends AppCompatActivity {
             public void onClick(View view) {
                 if (isNameChanged() || isPasswordChanged() || isEmailChanged()){
                     Toast.makeText(profileEdit.this, "Saved", Toast.LENGTH_SHORT).show();
+                    Thread thread = new Thread() { // they thread wait for 2sec in profile activity for show a toast msg then go home.
+                        public void run() {
+                            try {
+                                sleep(2000);
+                            }
+                            catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            finally {
+                                Intent intent = new Intent(profileEdit.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    };thread.start();
+
                 } else {
                     Toast.makeText(profileEdit.this, "No Changes Found", Toast.LENGTH_SHORT).show();
+                    Thread thread = new Thread() { // they thread wait for 2sec in profile activity for show a toast msg then go home.
+                        public void run() {
+                            try {
+                                sleep(2000);
+                            }
+                            catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            finally {
+                                Intent intent = new Intent(profileEdit.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    };thread.start();
                 }
             }
         });
+
     }
 
     private boolean isNameChanged() {
@@ -92,4 +129,5 @@ public class profileEdit extends AppCompatActivity {
         editUsername.setText(usernameUser);
         editPassword.setText(passwordUser);
     }
+
 }

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/purple_200"
+    android:background="@drawable/background"
     tools:context=".profileEdit">
 
     <androidx.cardview.widget.CardView
@@ -44,7 +44,7 @@
                 android:hint="Name"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple_700"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:hint="Email"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple_700"/>
 
 
             <EditText
@@ -69,7 +69,7 @@
                 android:hint="Username"
                 android:drawableLeft="@drawable/baseline_person_pin_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple_700"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple_700"/>
 
             <Button
                 android:layout_width="match_parent"

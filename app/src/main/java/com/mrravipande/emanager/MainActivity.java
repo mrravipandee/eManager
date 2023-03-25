@@ -16,14 +16,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
+import com.mrravipande.emanager.Management.Admin_panel;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText loginUsername, loginPassword;
     Button loginButton;
-    TextView signupRedirectText;
+    TextView managementTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         loginUsername = findViewById(R.id.login_id);
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
-        signupRedirectText = findViewById(R.id.signupRedirectText);
+        managementTeam = findViewById(R.id.managementTeamLogin);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        signupRedirectText.setOnClickListener(new View.OnClickListener() {
+        managementTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, signUp.class);
+                Intent intent = new Intent(MainActivity.this, Admin_panel.class);
                 startActivity(intent);
             }
         });
@@ -115,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         loginPassword.setError("Invalid Credentials");
                         loginPassword.requestFocus();
                     }
+
                 } else {
                     loginUsername.setError("User does not exist");
                     loginUsername.requestFocus();

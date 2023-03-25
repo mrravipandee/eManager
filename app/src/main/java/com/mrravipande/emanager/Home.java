@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     public DrawerLayout drawerLayout;
 
-    String userName, userId, email, password;
+    String userName, userId, userIdHome, userNameHome, userIdProfile;
     DatabaseReference reference;
 
     @Override
@@ -46,7 +46,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        showProfileData();
+        showProfileData(); // they show after user login.
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
                 R.string.close_nav);
@@ -72,9 +72,40 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         });
     }
 
+    public void showProfileData() {
+
+        Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
+        setSupportActionBar(toolbar);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav,
+                R.string.close_nav);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        // Start: show data from Database to home navigation drawer profile
+        View headerView = navigationView.getHeaderView(0);
+
+        Intent intent = getIntent();
+
+//        TextView navUsername = headerView.findViewById(R.id.titleName);
+//        userName = intent.getStringExtra("name");
+//        navUsername.setText(userName);
+//
+//        TextView navStudentId = headerView.findViewById(R.id.studentId);
+//        userId = intent.getStringExtra("username");
+//        navStudentId.setText(userId);
+        // end: show data from Database to home navigation drawer profile
+
+        userIdProfile = intent.getStringExtra("username");
+    }
+
     public void moveProfileData() {
 
-        String userUsername = userId.toString().trim();
+        String userUsername = userIdProfile;
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
@@ -101,23 +132,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-    }
-
-    public void showProfileData() {
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Start: show data from Database to home navigation drawer profile
-        View headerView = navigationView.getHeaderView(0);
-
-        Intent intent = getIntent();
-
-        TextView navUsername = headerView.findViewById(R.id.titleName);
-        userName = intent.getStringExtra("name");
-        navUsername.setText(userName);
-
-        TextView navStudentId = headerView.findViewById(R.id.studentId);
-        userId = intent.getStringExtra("username");
-        navStudentId.setText(userId);
-        // end: show data from Database to home navigation drawer profile
     }
 
     @Override

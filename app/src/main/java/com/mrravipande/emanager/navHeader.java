@@ -29,8 +29,8 @@ public class navHeader extends AppCompatActivity {
 
 
 
-        titleName = findViewById(R.id.titleName);
-        titleUsername = findViewById(R.id.studentId);
+//        titleName = findViewById(R.id.titleName);
+//        titleUsername = findViewById(R.id.studentId);
 
         showAllUserData();
 

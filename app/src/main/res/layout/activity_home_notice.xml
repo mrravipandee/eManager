@@ -48,24 +48,67 @@
         </com.google.android.material.card.MaterialCardView>
 
         <EditText
-            android:id="@+id/homeTitle"
+            android:id="@+id/eventTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/custom_edittext"
             android:drawablePadding="8dp"
             android:hint="Notice Title"
-            android:drawableLeft="@drawable/baseline_person_pin_24"
-            android:padding="8dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/purple_700" />
+
+        <EditText
+            android:id="@+id/eventDesciption"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="Notice Description"
+            android:paddingLeft="20dp"
+            android:textColor="@color/purple_700" />
+
+        <EditText
+            android:id="@+id/eventLocation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="Location of event"
+            android:paddingLeft="20dp"
+            android:textColor="@color/purple_700" />
+
+        <EditText
+            android:id="@+id/eventDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="Date of event"
+            android:paddingLeft="20dp"
+            android:textColor="@color/purple_700" />
+
+        <EditText
+            android:id="@+id/eventCollege"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="College, Department, org"
+            android:paddingLeft="20dp"
             android:textColor="@color/purple_700" />
 
         <Button
-            android:id="@+id/uploadNoticeBtn"
+            android:id="@+id/postEvent"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/purple_700"
-            android:text="Upload Notice"
+            android:text="Post Event"
             android:textSize="16sp"
             app:cornerRadius="10dp"/>
 

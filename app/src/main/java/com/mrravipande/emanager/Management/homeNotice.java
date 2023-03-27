@@ -45,7 +45,7 @@ public class homeNotice extends AppCompatActivity {
 
     private DatabaseReference reference;
     private StorageReference storageReference;
-    String downloadUrl = "";
+    String downloadUrl = "".toString();
     private ProgressDialog pd;
 
     @Override
@@ -80,9 +80,10 @@ public class homeNotice extends AppCompatActivity {
                     eventTitle.setError("Please Fill");
                     eventTitle.requestFocus();
                 } else if (bitmap == null) {
-                    uploadImage();
+
+                    Toast.makeText(homeNotice.this, "Please select an image.", Toast.LENGTH_SHORT).show();
                 } else {
-                    uploadData();
+                    uploadImage(); // upload images in firebase storage & other data also because our updatedata() used in a uploadImg() function.
                 }
             }
         });
@@ -176,7 +177,7 @@ public class homeNotice extends AppCompatActivity {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
             // show image in imageview
             showImageView.setImageBitmap(bitmap);

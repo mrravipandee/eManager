@@ -111,7 +111,7 @@
             android:layout_height="150dp"
             app:cardCornerRadius="25dp"
             android:layout_margin="10dp"
-            android:id="@+id/photos">
+            android:id="@+id/uploadPhotos">
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -14,6 +14,7 @@ public class m_dash extends AppCompatActivity {
 
     MaterialCardView homeNotice, certificates, photos;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +22,12 @@ public class m_dash extends AppCompatActivity {
 
         homeNotice = findViewById(R.id.homeNotice);
         certificates = findViewById(R.id.certificates);
-        photos = findViewById(R.id.photos);
+        photos = findViewById(R.id.uploadPhotos);
 
         homeNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.homeNotice.class);
+               Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.homeNotice.class);
                 startActivity(intent);
             }
         });
@@ -34,15 +35,15 @@ public class m_dash extends AppCompatActivity {
         certificates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.certificatesUpload.class);
+               Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.certificatesUpload.class);
                 startActivity(intent);
             }
         });
-
         photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.photoUpload.class);
+               Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.homePhotos.class);
+
                 startActivity(intent);
             }
         });

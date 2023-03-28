@@ -47,7 +47,7 @@ me +91 70585 48204.
 
 
 ## 🔗 Links
-[![linkedin](https://img.shields.io/badge/link-0A66C2?style=for-the-badge&logo=link&logoColor=white)](https://www.mrravipande.bio.link/)
+[![linkedin](https://img.shields.io/badge/link-0A66C2?style=for-the-badge&logo=link&logoColor=white)](https://mrravipande.bio.link/)
 
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/mrravipande)
 

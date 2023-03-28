@@ -8,7 +8,7 @@ This app is for those people who have to organised event in college and in schoo
 For so many of us, college is the first step into adulthood and freedom. Following your passions, wearing what you want to, doing what you want to, networking, and having fun. One of the most memorable experiences of college life? Fests and Events! The energy and hustle involved in managing college events is an unparalleled experience. It’s all about how you overcome those hitches and try to create the best experience for everyone! Do you have an upcoming event where you need a speaker? Would you like to organise a speaker event in your college? If so, you’re at the right place! 
 
 
-[play_store_512](https://user-images.githubusercontent.com/74792529/228371900-23bc4b65-ecbd-4b41-a196-c7045c6b087b.png)
+(![play_store_512](https://user-images.githubusercontent.com/74792529/228371900-23bc4b65-ecbd-4b41-a196-c7045c6b087b.png)
 
 
 ## Installation
@@ -35,8 +35,8 @@ Just Follow some course to help to Understand Android Studio
 
 ## Screenshots
 
-[2](https://user-images.githubusercontent.com/74792529/228372772-d50b78a4-6077-4bd0-8541-436e957c51cd.jpeg)
-[2](https://user-images.githubusercontent.com/74792529/228372809-23408885-46f1-4928-817c-9975968d2daa.jpeg)
+(![2](https://user-images.githubusercontent.com/74792529/228372772-d50b78a4-6077-4bd0-8541-436e957c51cd.jpeg)
+(![2](https://user-images.githubusercontent.com/74792529/228372809-23408885-46f1-4928-817c-9975968d2daa.jpeg)
 
 
 ## Support

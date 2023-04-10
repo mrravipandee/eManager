@@ -35,7 +35,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class homeNotice extends AppCompatActivity {
-    
+
     private MaterialCardView addImageNotice;
     private final int REQ = 1;
     private Bitmap bitmap;
@@ -183,4 +183,5 @@ public class homeNotice extends AppCompatActivity {
             showImageView.setImageBitmap(bitmap);
         }
     }
+
 }

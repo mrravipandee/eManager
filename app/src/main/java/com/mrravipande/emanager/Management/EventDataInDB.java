@@ -9,7 +9,6 @@ public class EventDataInDB {
     String key;
     String date;
     String time;
-
     String image;
 
     public EventDataInDB(String image, String eventTitle, String eventDesciption, String eventLocation, String eventDate, String eventCollege, String key, String date, String time) {

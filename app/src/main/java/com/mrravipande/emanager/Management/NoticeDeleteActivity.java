@@ -1,16 +1,13 @@
-package com.mrravipande.emanager;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
+package com.mrravipande.emanager.Management;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -19,37 +16,33 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mrravipande.emanager.Management.NoticeDeleteActivity;
+import com.mrravipande.emanager.NoticeAdapter;
+import com.mrravipande.emanager.NoticeFieldData;
+import com.mrravipande.emanager.R;
 
 import java.util.ArrayList;
 
-public class homeFragment extends Fragment {
+public class NoticeDeleteActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
-    HomeFeedAdapter noticeAdapter;
+    NoticeAdapter noticeAdapter;
     ArrayList<NoticeFieldData> notice;
     ProgressBar progressBar;
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_notice_delete);
 
-
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        recyclerView = view.findViewById(R.id.deleteNoticeRecyc);
-        progressBar = view.findViewById(R.id.progressBar);
+        recyclerView = findViewById(R.id.deleteNoticeRecyc);
+        progressBar = findViewById(R.id.progressBar);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("EventNotices");
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
         getNoticeData();
-
-        return view;
     }
 
     private void getNoticeData() {
@@ -63,7 +56,7 @@ public class homeFragment extends Fragment {
                     notice.add(noticeFieldData);
                 }
 
-                noticeAdapter = new HomeFeedAdapter(getContext(), notice);
+                noticeAdapter = new NoticeAdapter(NoticeDeleteActivity.this, notice);
                 noticeAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 recyclerView.setAdapter(noticeAdapter);
@@ -71,10 +64,10 @@ public class homeFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                
                 progressBar.setVisibility(View.GONE);
 
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(NoticeDeleteActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

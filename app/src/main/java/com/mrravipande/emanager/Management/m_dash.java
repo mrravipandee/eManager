@@ -5,14 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.mrravipande.emanager.R;
 
 public class m_dash extends AppCompatActivity {
 
-    MaterialCardView homeNotice, certificates, photos;
+    MaterialCardView homeNotice, certificates, photos, seeNotice;
 
 
     @Override
@@ -23,6 +22,7 @@ public class m_dash extends AppCompatActivity {
         homeNotice = findViewById(R.id.homeNotice);
         certificates = findViewById(R.id.certificates);
         photos = findViewById(R.id.uploadPhotos);
+        seeNotice = findViewById(R.id.seeNotice);
 
         homeNotice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +44,14 @@ public class m_dash extends AppCompatActivity {
             public void onClick(View view) {
                Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.homePhotos.class);
 
+                startActivity(intent);
+            }
+        });
+
+        seeNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(m_dash.this, NoticeDeleteActivity.class);
                 startActivity(intent);
             }
         });

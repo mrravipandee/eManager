@@ -30,7 +30,6 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.MyViewHold
         this.NoticeData = noticeData;
     }
 
-
     @NonNull
     @Override
     public NoticeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,6 +46,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.MyViewHold
         holder.nDiscription.setText(noticeFieldData.getEventDesciption());
         holder.nLocation.setText(noticeFieldData.getEventLocation());
         holder.nCollege.setText(noticeFieldData.getEventCollege());
+        holder.nDate.setText(noticeFieldData.getEventDate());
 
         try {
             if(noticeFieldData.getImage() != null)

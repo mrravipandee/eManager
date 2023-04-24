@@ -28,13 +28,12 @@ public class homeFragment extends Fragment {
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     HomeFeedAdapter noticeAdapter;
-    ArrayList<NoticeFieldData> notice;
+    ArrayList<NoticeDataHome> notice;
     ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -59,7 +58,7 @@ public class homeFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 notice = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    NoticeFieldData noticeFieldData = snapshot.getValue(NoticeFieldData.class);
+                    NoticeDataHome noticeFieldData = snapshot.getValue(NoticeDataHome.class);
                     notice.add(noticeFieldData);
                 }
 

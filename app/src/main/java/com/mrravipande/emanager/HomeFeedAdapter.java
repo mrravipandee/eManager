@@ -10,16 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
+import com.bumptech.glide.Glide;
 import java.util.ArrayList;
+
 
 public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<NoticeFieldData> NoticeData;
+    ArrayList<NoticeDataHome> NoticeData;
 
-    public HomeFeedAdapter(Context context, ArrayList<NoticeFieldData> noticeData) {
+    public HomeFeedAdapter(Context context, ArrayList<NoticeDataHome> noticeData) {
         this.context = context;
         this.NoticeData = noticeData;
     }
@@ -34,16 +34,17 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        NoticeFieldData noticeFieldData = NoticeData.get(position);
+        NoticeDataHome noticeFieldData = NoticeData.get(position);
 
         holder.nTitle.setText(noticeFieldData.getEventTitle());
         holder.nDiscription.setText(noticeFieldData.getEventDesciption());
         holder.nLocation.setText(noticeFieldData.getEventLocation());
         holder.nCollege.setText(noticeFieldData.getEventCollege());
+        holder.nDate.setText(noticeFieldData.getEventDate());
 
         try {
             if (noticeFieldData.getImage() != null)
-                Picasso.get().load(noticeFieldData.getImage()).into(holder.nImageview);
+                Glide.with(context).load(noticeFieldData.getImage()).into(holder.nImageview);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,7 +55,7 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
         return NoticeData.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView nTitle, nDate, nDiscription, nLocation, nCollege;
         ImageView nImageview;
@@ -72,3 +73,4 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
         }
     }
 }
+

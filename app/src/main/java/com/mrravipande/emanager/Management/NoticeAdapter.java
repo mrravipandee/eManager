@@ -1,4 +1,4 @@
-package com.mrravipande.emanager;
+package com.mrravipande.emanager.Management;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mrravipande.emanager.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

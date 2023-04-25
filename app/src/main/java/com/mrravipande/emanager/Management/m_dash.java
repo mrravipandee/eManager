@@ -42,7 +42,7 @@ public class m_dash extends AppCompatActivity {
         photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(m_dash.this, com.mrravipande.emanager.Management.homePhotos.class);
+               Intent intent = new Intent(com.mrravipande.emanager.Management.m_dash.this, com.mrravipande.emanager.Management.homePhotos.class);
 
                 startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class m_dash extends AppCompatActivity {
         seeNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(m_dash.this, NoticeDeleteActivity.class);
+                Intent intent = new Intent(com.mrravipande.emanager.Management.m_dash.this, NoticeDeleteActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.mrravipande.emanager;
+package com.mrravipande.emanager.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mrravipande.emanager.HelperClass;
+import com.mrravipande.emanager.MainActivity;
+import com.mrravipande.emanager.R;
 
 public class signUp extends AppCompatActivity {
 

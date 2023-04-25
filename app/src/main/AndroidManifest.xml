@@ -35,16 +35,16 @@
             android:name=".Management.Admin_panel"
             android:exported="false" />
         <activity
-            android:name=".profileEdit"
+            android:name=".users.profileEdit"
             android:exported="false" />
         <activity
-            android:name=".signUp"
+            android:name=".users.signUp"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".users.Home"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

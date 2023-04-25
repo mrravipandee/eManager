@@ -1,4 +1,4 @@
-package com.mrravipande.emanager;
+package com.mrravipande.emanager.users;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.mrravipande.emanager.R;
+
 import java.util.ArrayList;
 
 

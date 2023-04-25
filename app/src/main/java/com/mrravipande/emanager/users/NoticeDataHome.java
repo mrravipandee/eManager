@@ -1,4 +1,4 @@
-package com.mrravipande.emanager;
+package com.mrravipande.emanager.users;
 
 public class NoticeDataHome {
     String eventCollege, eventDate, eventDesciption, eventLocation, eventTitle, image, key;

@@ -1,4 +1,4 @@
-package com.mrravipande.emanager;
+package com.mrravipande.emanager.Management;
 
 public class NoticeFieldData {
 

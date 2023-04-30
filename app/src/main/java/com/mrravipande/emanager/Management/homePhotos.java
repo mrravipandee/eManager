@@ -139,6 +139,8 @@ public class homePhotos extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         pd.dismiss();
                         Toast.makeText(homePhotos.this, "Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(homePhotos.this, m_dash.class);
+                        startActivity(intent);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

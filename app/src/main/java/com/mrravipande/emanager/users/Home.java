@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mrravipande.emanager.R;
+import com.mrravipande.emanager.eBook.eBook;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -64,6 +65,17 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
                 Intent intent = new Intent(Home.this, profileEdit.class);
                 startActivity(intent);
+                return false;
+            }
+        });
+
+        navigationView.getMenu().findItem(R.id.nav_certificates).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
+                drawerLayout.close();
+
+                Intent intent1 = new Intent(Home.this, eBook.class);
+                startActivity(intent1);
                 return false;
             }
         });
@@ -146,9 +158,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new photosFragment()).commit();
                 break;
 
-            case R.id.nav_certificates:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new certificatesFragment()).commit();
-                break;
+//            case R.id.nav_certificates:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new certificatesFragment()).commit();
+//                break;
 
 //            case R.id.nav_logout:
 //                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutFragment()).commit();

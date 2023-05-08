@@ -1,6 +1,8 @@
 package com.mrravipande.emanager.eBook;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +49,9 @@ public class eBookAdapter extends RecyclerView.Adapter<eBookAdapter.EBookViewHol
         holder.eBookDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(context, "Downloading...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(list.get(position).getPdfUrl()));
+                context.startActivity(intent);
             }
         });
 

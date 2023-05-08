@@ -1,6 +1,7 @@
 package com.mrravipande.emanager.users;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.mrravipande.emanager.FullZoomImages;
 import com.mrravipande.emanager.R;
 
 import java.util.ArrayList;
@@ -50,6 +52,14 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
         } catch (Exception e) {
             e.printStackTrace();
         }
+        holder.nImageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FullZoomImages.class);
+                intent.putExtra("image", noticeFieldData.getImage());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

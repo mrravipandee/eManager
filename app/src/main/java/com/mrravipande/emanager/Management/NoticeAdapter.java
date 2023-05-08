@@ -1,6 +1,7 @@
 package com.mrravipande.emanager.Management;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mrravipande.emanager.FullZoomImages;
 import com.mrravipande.emanager.R;
 import com.squareup.picasso.Picasso;
 
@@ -55,6 +57,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.MyViewHold
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         holder.nDelete.setOnClickListener(new View.OnClickListener() {
             @Override

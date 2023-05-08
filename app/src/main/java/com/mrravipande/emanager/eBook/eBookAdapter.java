@@ -47,7 +47,7 @@ public class eBookAdapter extends RecyclerView.Adapter<eBookAdapter.EBookViewHol
         holder.eBookDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Downloading...", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Downloading...", Toast.LENGTH_SHORT).show();
             }
         });
 

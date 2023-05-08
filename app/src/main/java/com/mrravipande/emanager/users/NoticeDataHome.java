@@ -1,7 +1,15 @@
 package com.mrravipande.emanager.users;
 
 public class NoticeDataHome {
-    String eventCollege, eventDate, eventDesciption, eventLocation, eventTitle, image, key;
+    String eventCollege, eventDate, eventDesciption, eventLocation, eventTitle, image, key, eventLink;
+
+    public String getEventLink() {
+        return eventLink;
+    }
+
+    public void setEventLink(String eventLink) {
+        this.eventLink = eventLink;
+    }
 
     public String getEventCollege() {
         return eventCollege;
@@ -62,4 +70,8 @@ public class NoticeDataHome {
     public NoticeDataHome() {
 
     }
+
+    public String getRegLink() { return eventLink; }
+
+    public void setRegLink() {this.eventLink = eventLink; }
 }

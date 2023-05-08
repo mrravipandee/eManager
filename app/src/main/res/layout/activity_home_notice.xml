@@ -102,6 +102,17 @@
             android:paddingLeft="20dp"
             android:textColor="@color/purple_700" />
 
+        <EditText
+            android:id="@+id/eventLink"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edittext"
+            android:drawablePadding="8dp"
+            android:hint="past Link here"
+            android:paddingLeft="20dp"
+            android:textColor="@color/purple_700" />
+
         <Button
             android:id="@+id/postEvent"
             android:layout_width="match_parent"

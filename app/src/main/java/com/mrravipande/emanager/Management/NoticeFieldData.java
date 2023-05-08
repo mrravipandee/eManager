@@ -2,7 +2,15 @@ package com.mrravipande.emanager.Management;
 
 public class NoticeFieldData {
 
-    String eventCollege, eventDate, eventDesciption, eventLocation, eventTitle, image, key;
+    String eventCollege, eventDate, eventDesciption, eventLocation, eventTitle, image, key, regLink;
+
+    public String getRegLink() {
+        return regLink;
+    }
+
+    public void setRegLink(String regLink) {
+        this.regLink = regLink;
+    }
 
     public String getEventCollege() {
         return eventCollege;

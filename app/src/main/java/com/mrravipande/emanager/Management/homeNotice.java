@@ -40,7 +40,7 @@ public class homeNotice extends AppCompatActivity {
     private final int REQ = 1;
     private Bitmap bitmap;
     private ImageView showImageView;
-    private EditText eventTitle, eventDesciption, eventLocation, eventDate, eventCollege;
+    private EditText eventTitle, eventDesciption, eventLocation, eventDate, eventCollege, eventLink;
     private Button postEventBtn;
 
     private DatabaseReference reference;
@@ -62,6 +62,7 @@ public class homeNotice extends AppCompatActivity {
         showImageView = findViewById(R.id.noticeImageview);
         addImageNotice = findViewById(R.id.addImageNotice);
         pd = new ProgressDialog(this);
+        eventLink = findViewById(R.id.eventLink);
 
         //firebase variables
         reference = FirebaseDatabase.getInstance().getReference();
@@ -138,6 +139,7 @@ public class homeNotice extends AppCompatActivity {
         String eLocation = eventLocation.getText().toString();
         String eDate = eventDate.getText().toString();
         String eCollege = eventCollege.getText().toString();
+        String eLink = eventLink.getText().toString();
 
         Calendar calDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
@@ -147,7 +149,7 @@ public class homeNotice extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
         String time = currentTime.format(calTime.getTime());
 
-        EventDataInDB eventDataInDB = new EventDataInDB(downloadUrl, eTitle, eDescription, eLocation, eDate, eCollege, uniqueKey, date, time);
+        EventDataInDB eventDataInDB = new EventDataInDB(downloadUrl, eTitle, eDescription, eLocation, eDate, eCollege, uniqueKey, date, time, eLink);
 
         reference.child(uniqueKey).setValue(eventDataInDB).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

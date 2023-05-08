@@ -11,7 +11,7 @@ public class EventDataInDB {
     String time;
     String image;
 
-    public EventDataInDB(String image, String eventTitle, String eventDesciption, String eventLocation, String eventDate, String eventCollege, String key, String date, String time) {
+    public EventDataInDB(String image, String eventTitle, String eventDesciption, String eventLocation, String eventDate, String eventCollege, String key, String date, String time, String eLink) {
         this.image = image;
         this.eventTitle = eventTitle;
         this.eventDesciption = eventDesciption;

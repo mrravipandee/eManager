@@ -45,6 +45,7 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
         holder.nLocation.setText(noticeFieldData.getEventLocation());
         holder.nCollege.setText(noticeFieldData.getEventCollege());
         holder.nDate.setText(noticeFieldData.getEventDate());
+//        holder.nRegLink.setText(noticeFieldData.getRegLink());
 
         try {
             if (noticeFieldData.getImage() != null)
@@ -69,7 +70,7 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.MyView
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nTitle, nDate, nDiscription, nLocation, nCollege;
+        TextView nTitle, nDate, nDiscription, nLocation, nCollege, nRegLink;
         ImageView nImageview;
 
         public MyViewHolder(@NonNull View itemView) {

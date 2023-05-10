@@ -50,7 +50,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.MyViewHold
         holder.nLocation.setText(noticeFieldData.getEventLocation());
         holder.nCollege.setText(noticeFieldData.getEventCollege());
         holder.nDate.setText(noticeFieldData.getEventDate());
-        holder.nRegLink.setText(noticeFieldData.getRegLink());
+        
 
         try {
             if(noticeFieldData.getImage() != null)
